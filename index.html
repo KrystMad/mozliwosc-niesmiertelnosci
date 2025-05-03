@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Możliwość nieśmiertelności — wiersz</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg-dark:#0f0d0c;
+  --text-light:#e6e0d7;
+  --accent-gold:#c29e52;
+  --max-width:52rem;
+  --gap:2.2rem;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html,body{height:100%;background:var(--bg-dark);color:var(--text-light);
+          font-family:"EB Garamond",serif;line-height:1.5;}
+
+header{padding:8vh 1rem 4vh;text-align:center;}
+h1{font-size:clamp(2.5rem,4vw,4rem);letter-spacing:.03em;text-transform:uppercase;}
+h1::after{content:"";display:block;width:4rem;height:2px;background:var(--accent-gold);margin:1.25rem auto 0;}
+
+main{max-width:var(--max-width);margin:0 auto;padding:0 1rem;}
+
+.stanza{margin-bottom:var(--gap);font-size:1.1rem;position:relative;}
+.stanza p{transition:transform .25s ease;}
+.stanza p.active-line{transform:scale(1.05);}
+p + p{margin-top:.6rem;}
+
+@keyframes flow{from{background-position:0 -100%;}to{background-position:0 100%;}
+}
+.stanza::before{
+  content:"";position:absolute;left:-1.25rem;top:0;width:3px;height:100%;
+  background:linear-gradient(var(--accent-gold) 0%,transparent 70%);
+  background-size:100% 200%;animation:flow 10s linear infinite;opacity:.35;}
+.stanza:nth-child(odd)::before{animation-duration:12s;}
+.stanza:nth-child(even)::before{animation-duration:8s;}
+
+figure{margin:8vh 0;text-align:center;}
+@keyframes shimmer{0%,100%{box-shadow:0 0 0 0 var(--accent-gold);}50%{box-shadow:0 0 18px 4px var(--accent-gold);}}
+figure img{max-width:100%;height:auto;border:1px solid var(--accent-gold);
+           animation:shimmer 7s ease-in-out infinite alternate;transition:transform .8s ease;}
+figure:hover img{transform:scale(1.02);}
+
+footer{padding:6vh 0 8vh;text-align:center;font-family:"Inter",sans-serif;font-size:.8rem;color:#8a8479;}
+
+@keyframes drift{from{transform:translateY(-5%);}to{transform:translateY(5%);}}
+body::before{
+  content:"";position:fixed;inset:0;
+  background:radial-gradient(ellipse at 50% 120%,transparent 0%,#000 70%);
+  pointer-events:none;mix-blend-mode:soft-light;opacity:.4;animation:drift 40s linear infinite;
+}
+
+[data-reveal]{opacity:0;transform:translateY(20px);transition:opacity .9s ease,transform 1s ease;}
+[data-reveal].visible{opacity:1;transform:none;}
+
+.char{display:inline-block;pointer-events:none;transition:transform 1.5s ease,opacity 1.5s ease;}
+body.idle .char{
+  transform:translate(var(--dx),var(--dy)) rotate(var(--rot));
+  opacity:0;
+}
+</style>
+</head>
+
+<body>
+
+<header><h1>Możliwość&nbsp;nieśmiertelności</h1></header>
+
+<main>
+<section aria-label="Wiersz">
+ 
+ <!-- (tu zostają wszystkie dziewięć strof identycznie jak w poprzedniej wersji) -->
+  
+  <!-- przykład pierwszej strofy, resztę wklej bez zmian -->
+  <div class="stanza" data-reveal>
+    <p>Z martwego powstaje nie to, co było,</p>
+    <p>ale to, co może stać się jeszcze raz —</p>
+    <p>choć nie w tej samej postaci,</p>
+    <p>bo postać się rozsypuje,</p>
+    <p>a rozsypując się, staje się warunkiem</p>
+    <p>dla kolejnej formy, która już</p>
+    <p>w niej była, jako możność.</p>
+  </div>
+
+<div class="stanza" data-reveal>
+    <p>Woda, która staje się octem,</p>
+    <p>nie traci pamięci o wodzie —</p>
+    <p>jest nią wciąż, lecz przemienioną,</p>
+    <p>tak jak zwierzę — po śmierci —</p>
+    <p>nie znika, ale zwraca się ku materii,</p>
+    <p>która była przed nim,</p>
+    <p>która teraz jest nim,</p>
+    <p>która będzie czymś więcej niż on.</p>
+  </div>
+
+  <div class="stanza" data-reveal>
+    <p>To, co się przemienia,</p>
+    <p>nie oddala się od siebie,</p>
+    <p>ale zawraca —</p>
+    <p>do siebie, przez siebie,</p>
+    <p>poprzez to, czym już raz było,</p>
+    <p>i czym jeszcze nie zdążyło się stać.</p>
+  </div>
+
+  <div class="stanza" data-reveal>
+    <p>Jeśli zwierzę pochodzi z martwego,</p>
+    <p>a martwe z materii,</p>
+    <p>to w każdym zwierzęciu drzemie śmierć,</p>
+    <p>ale też —</p>
+    <p>w każdej śmierci</p>
+    <p>możliwość powtórnego zwierzęcia.</p>
+  </div>
+
+  <div class="stanza" data-reveal>
+    <p>Jeśli wino pochodzi z wody,</p>
+    <p>a woda z octu,</p>
+    <p>to w każdej kropli jest</p>
+    <p>cień fermentacji,</p>
+    <p>cień rozpadu,</p>
+    <p>cień źródła,</p>
+    <p>które nie jest ani początkiem,</p>
+    <p>ani końcem,</p>
+    <p>lecz ciągłym "pomiędzy".</p>
+  </div>
+
+  <div class="stanza" data-reveal>
+    <p>Między materią a formą</p>
+    <p>jest czas,</p>
+    <p>który nie płynie,</p>
+    <p>ale wraca —</p>
+    <p>jak sen,</p>
+    <p>który śni sen,</p>
+    <p>o śnie,</p>
+    <p>w którym coś budzi się</p>
+    <p>do śnienia.</p>
+  </div>
+
+  <div class="stanza" data-reveal>
+    <p>Cień, który pada na ścianę,</p>
+    <p>nie jest cieniem tylko tego, co realne,</p>
+    <p>ale także cieniem cienia,</p>
+    <p>który już raz padł,</p>
+    <p>i padnie znowu,</p>
+    <p>kiedy światło przejdzie</p>
+    <p>przez nieobecność formy.</p>
+  </div>
+
+  <div class="stanza" data-reveal>
+    <p>I znów</p>
+    <p>z martwego — możność,</p>
+    <p>z możności — byt,</p>
+    <p>z bytu — kres,</p>
+    <p>z kresu — możliwość powrotu.</p>
+  </div>
+
+  <div class="stanza" data-reveal>
+    <p>I powraca.</p>
+    <p>Nie jako to samo,</p>
+    <p>ale jako struktura powracania.</p>
+    <p>W której nawet powrót</p>
+    <p>jest tylko odbiciem</p>
+    <p>tego, co już raz odeszło,</p>
+    <p>by wrócić.</p>
+  </div>
+
+
+</section>
+
+<figure data-reveal>
+  <img src="images/zwierze.png" alt="Szkielet jelenia rozpraszający się w wodę i wlewający wino do kielicha">
+</figure>
+</main>
+
+<footer>
+  &copy; 2025. Tekst i grafika: SophiaAI&amp;Krystian&nbsp;Madejski<br>
+  Projekt szaty graficznej: AI&nbsp;Assistant&nbsp;o3
+</footer>
+
+<script>
+/* ========= Fade-in przy scrollu ========= */
+const obs=new IntersectionObserver(e=>e.forEach(x=>x.isIntersecting&&x.target.classList.add('visible')),{threshold:.25});
+document.querySelectorAll('[data-reveal]').forEach(el=>obs.observe(el));
+
+/* ========= Rozsypywanie + aktywność + highlight linii ========= */
+document.addEventListener('DOMContentLoaded',()=>{
+  const body=document.body;
+  const RAND=(m,n)=>Math.random()*(n-m)+m;
+
+  /* 1. Opakuj litery w <span class="char"> */
+  document.querySelectorAll('.stanza p').forEach(p=>{
+    p.innerHTML=[...p.textContent].map(ch=>ch===' ' ? ' ' : `<span class="char">${ch}</span>`).join('');
+  });
+
+  /* 2. Funkcja rozrzucająca litery */
+  const scatter=()=>document.querySelectorAll('.char')
+    .forEach(s=>{
+      s.style.setProperty('--dx',RAND(-30,30).toFixed(1)+'px');
+      s.style.setProperty('--dy',RAND(30,80).toFixed(1)+'px');
+      s.style.setProperty('--rot',RAND(-30,30).toFixed(1)+'deg');
+    });
+
+  /* 3. Licznik bezczynności (30 s) */
+  let idleT;
+  const resetIdle=()=>{
+    clearTimeout(idleT);
+    body.classList.remove('idle');
+    idleT=setTimeout(()=>{scatter();body.classList.add('idle');},30000);
+  };
+
+  /* 4. Highlight linii pod kursorem + obsługa scroll/wheel */
+  let lastX=0,lastY=0,current=null;
+  const updateActive=()=>{
+    const el=document.elementFromPoint(lastX,lastY);
+    const p=el?.closest('.stanza p');
+    if(p!==current){
+      current?.classList.remove('active-line');
+      p?.classList.add('active-line');
+      current=p;
+    }
+  };
+
+  window.addEventListener('mousemove',e=>{
+    lastX=e.clientX; lastY=e.clientY;
+    updateActive(); resetIdle();
+  },{passive:true});
+
+  ['wheel','scroll'].forEach(evt=>window.addEventListener(evt,()=>{
+    updateActive(); resetIdle();
+  },{passive:true}));
+
+  ['keydown','touchstart'].forEach(evt=>window.addEventListener(evt,resetIdle,{passive:true}));
+
+  resetIdle();           // start licznika
+});
+</script>
+
+</body>
+</html>
